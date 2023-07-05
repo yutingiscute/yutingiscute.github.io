@@ -125,6 +125,7 @@
 
 		});
 
+	
 		// Global events.
 			$body
 				.on('click', function(event) {
