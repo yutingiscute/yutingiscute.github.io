@@ -9,73 +9,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			.overlay {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background-color: rgba(0, 0, 0, 0.7);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				z-index: 9999;
-			}
-	
-			.popup {
-				background-color: #fff;
-				padding: 20px;
-				border-radius: 5px;
-				text-align: center;
-				max-width: 300px;
-				margin: 0 auto;
-			}
-	
-			.popup p {
-				margin-bottom: 20px;
-			}
-	
-			.crossword {
-				display: grid;
-				grid-template-rows: repeat(3, 1fr);
-				gap: 2px;
-				background-color: #eee;
-				margin-bottom: 20px;
-			}
-	
-			.row {
-				display: flex;
-			}
-	
-			.cell {
-				flex: 1;
-				background-color: #fff;
-				border: 1px solid #ccc;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				font-size: 18px;
-			}
-	
-			.popup input[type="text"] {
-				width: 100%;
-				padding: 10px;
-				margin-bottom: 10px;
-				border: 1px solid #ccc;
-				border-radius: 3px;
-				box-sizing: border-box;
-			}
-	
-			.popup input[type="submit"]:hover {
-				background-color: #45a049;
-			}
-		</style>
-	
-	
 	</head>
+	
 	<body class="is-preload">
-		
 		<!-- Wrapper -->
 			<div id="wrapper">
 				<!-- Header -->
@@ -85,10 +21,8 @@
 							<ul>
 								<li><a href="#footer" class="icon solid fa-info-circle">Behind The Scene</a></li>
 							</ul>
-							
 						</nav>
 					</header>
-				 
 				<!-- Main -->
 					<div id="main">
                         <article class="thumb">
@@ -113,14 +47,13 @@
 						</article>
 						<article class="thumb">
 							<a href="images/photobook/cute6.jpg" class="image"><img src="images/photobook/cute6.jpg" alt="" /></a>
-							<h2>Pink shirt suits you!!!!!</h2>
+							<h2>Cuter than Taeyeon!</h2>
 						</article>
 						<article class="thumb">
 							<a href="images/photobook/cute7.jpg" class="image"><img src="images/photobook/cute7.jpg" alt="" /></a>
 							<h2>Thankssssss for the Plushie!!!!!</h2>
 						</article>
 					</div>
-
 				<!-- Footer -->
 					<footer id="footer" class="panel">
 						<div class="inner split">
@@ -135,45 +68,6 @@
 							</div>
 						</div>
 					</footer>
-					<div class="overlay">
-						<div class="popup">
-				
-							<p style="font-size: 16px; color: #333; margin-bottom: 14px; font-weight: bold;">What is Yu Ting's Boyfriend dream? Unscramble the following "yxuutniynagngforever"</p>
-							<div class="crossword">
-								<div class="row">
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-								</div>
-								<div class="row">
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-								</div>
-								<div class="row">
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-									<input type="text" class="cell" maxlength="1" />
-								</div>
-							</div>
-							<form id="answerForm">
-								<input type="submit" value="Submit" style="font-size: 14px; padding: 6px 12px; border-radius: 3px; background-color: #4CAF50; color: #fff; border: none; cursor: pointer;" />
-							</form>
-						</div>
-					</div>
-
-		
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
@@ -181,28 +75,5 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-		
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const overlay = document.querySelector(".overlay");
-			const form = document.getElementById("answerForm");
-			const cells = document.querySelectorAll(".cell");
-			const correctAnswers = ["y", "u", "t", "i", "n", "g", "x", "u", "n", "y", "a", "n", "g", "f", "o", "r", "e", "v", "e", "r"];
-
-			form.addEventListener("submit", function (event) {
-				event.preventDefault();
-
-				let userAnswers = Array.from(cells).map(cell => cell.value.toLowerCase());
-
-				if (JSON.stringify(userAnswers) === JSON.stringify(correctAnswers)) {
-					overlay.style.display = "none";
-				} else {
-					cells.forEach(cell => cell.value = "");
-					alert("The first line is the name of a cute girl!!, the second line is the name of the cute girl boyfriend");
-				}
-			});
-		});
-	</script>
 	</body>
 </html>
