@@ -48,43 +48,42 @@
             .popup input[type="submit"]:hover {
                 background-color: #45a049;
             }
+            body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
 
-            .video-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh; /* Full height */
-                margin: 0;
-                padding: 0;
-                background-color: black;
-            }
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+        }
 
-            .fullscreen-video {
-                width: 100%;
-                height: 100%;
-                max-width: 100vw;
-                max-height: 100vh;
-                border: none;
-            }
+        .fullscreen-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
         </style>
     </head>
 
     <body class="is-preload">
         <!-- Wrapper -->
         <div id="wrapper">
-            <!-- Header -->
-            <header id="header">
-                <h1><a href="photobook.html">Why Is <strong>YU TING</strong> So CUTE?</a></h1>
-                <nav>
-                    <ul>
-                        <li><a href="#footer" class="icon solid fa-info-circle">Behind The Scene</a></li>
-                    </ul>
-                </nav>
-            </header>
+    
             <!-- Main -->
             <div id="main" class="video-container">
                 <!-- Embed YouTube Video Full Screen -->
-                <iframe class="fullscreen-video" src="https://www.youtube.com/embed/VIDEO_ID_HERE" allowfullscreen></iframe>
+                <iframe class="fullscreen-video" src="https://www.youtube.com/embed/jrJ14zDCFHM" frameborder="0" allowfullscreen></iframe>
             </div>
             <!-- Footer -->
             <footer id="footer" class="panel">
@@ -92,8 +91,6 @@
                     <div>
                         <section>
                             <h2>Happy 1 Year Anniversary!</h2>
-                            <iframe width="560" height="315" src="https://youtu.be/jrJ14zDCFHM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
                         </section>
                     </div>
                 </div>
@@ -103,7 +100,7 @@
                     <h1 style="font-size: 26px; text-align: center;">
                         <span style="display: inline-block; background: linear-gradient(to right, #8b0000, #ff4500, #ffd700, #008000, #0000ff, #4b0082, #8a2be2); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Happy 1 Year Anniversary!</span>
                     </h1>
-                    <p style="font-size: 18px; color: #333; margin-bottom: 20px; font-weight: bold;">Who is the cutest person in the world?</p>
+                    <p style="font-size: 18px; color: #333; margin-bottom: 20px; font-weight: bold;">How many songs name is in the Letter?</p>
                     <form id="answerForm">
                         <input type="text" id="answerInput" placeholder="Enter your answer" />
                         <input type="submit" value="Submit" style="font-size: 14px; padding: 6px 12px; border-radius: 3px; background-color: #4CAF50; color: #fff; border: none; cursor: pointer;" />
@@ -123,7 +120,7 @@
                 const overlay = document.querySelector(".overlay");
                 const form = document.getElementById("answerForm");
                 const input = document.getElementById("answerInput");
-                const correctAnswers = ["yuting", "yu ting"];
+                const correctAnswers = ["8"];
                 form.addEventListener("submit", function (event) {
                     event.preventDefault();
                     const answer = input.value.trim().toLowerCase();
@@ -131,7 +128,7 @@
                         overlay.style.display = "none";
                     } else {
                         input.value = "";
-                        alert("Incorrect answer. Hint (6 Letter word that start with Y and end with G)");
+                        alert("Incorrect answer");
                     }
                 });
             });
